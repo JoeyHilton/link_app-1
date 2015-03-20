@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  # get 'comments/new'
+
+  # get 'comments/edit'
+
   # get 'users/index'
 
   # get 'users/show'
@@ -13,7 +17,10 @@ Rails.application.routes.draw do
   get 'posts/vote'
   get 'posts/downvote'
   get '/profile', to: 'users#profile', as: :profile
-  resources :posts
+  
+  resources :posts do
+    resources :comments, except: [:index, :show]
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,10 +1,30 @@
 <div class="panel panel-default">
 <h1> Link </h1>
-<h2><span class="btn btn-warning"><%= "Votes: #{@post.vote}"%></span> Website: <%= @post.title %>&nbsp|&nbsp<span class=boldfont><%= @post.url %></span></h2>
+<h2><span class="btn btn-warning"><%= "Votes: #{@post.vote}"%></span> Website: <%= @post.title %>&nbsp|&nbsp<span class=boldfont><%= link_to @post.url, @post.url %></span></h2>
 <%= link_to 'Back', posts_path, class: "btn btn-primary" %>
+
 <% if @post.user == current_user && user_signed_in? %>
   <%= link_to "Edit", edit_post_path(@post), class: "btn btn-info"  %>
   <%= link_to "Delete", @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"   %>
+<% end %>
+
+<h3>Posted by <%= link_to @post.user.name, user_path(@post.user) %></h3>
+
+<h2>
+  Comments
+  <%= link_to "Add Comment", new_post_comment_path(@post), class: "btn btn-primary" %>
+</h2>
+
+<% @post.comments.each do |comment| %>
+  <blockquote>
+    <p><%= comment.body %></p>
+    <footer><%= comment.user.name %>
+    <% if comment.user == current_user && user_signed_in? %>
+      <%= link_to "EDIT", edit_post_comment_path(@post, comment) %>
+      <%= link_to "DELETE", post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </footer>
+    <% end %>
+  </blockquote>
 <% end %>
 </div>
 

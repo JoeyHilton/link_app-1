@@ -1,13 +1,13 @@
-<h1> 'Yo Link Faves!'  <%= link_to 'Post a New Link', new_post_path, class: 'btn btn-default btn-lg' %></h1>
+<h1 class="headline"> 'Yo Link Faves!'  <%= link_to 'Post a New Link', new_post_path, class: 'btn btn-default btn-lg' %></h1>
 <% @posts.each do |post| %>
 <div class="panel panel-default">
-  <h2><span class="btn btn-warning"><%= "Votes: #{post.vote}"%></span> Website: <%= post.title %>&nbsp|&nbsp<span class=boldfont><%= post.url %></span></h2>
+  <h2><span class="btn btn-warning"><%= "Votes: #{post.vote}"%></span> Website: <%= post.title %>&nbsp|&nbsp<span class=boldfont><%= link_to post.url, post.url %></span></h2>
   <h3></h3>
   <h3></h3>
-  <%= link_to 'Show link', post_path(post), class: 'btn btn-success btn-sm' %>
+  <%= link_to 'Show link', post_path(post), class: 'btn btn-primary btn-sm' %>
  <!--  <%= link_to 'Edit link', edit_post_path(post), class: 'btn btn-primary btn-sm' %>
   <%= link_to 'Delete link', post, method: :delete, class: 'btn btn-danger btn-sm' %> -->
-  <%= link_to 'UpVote!', posts_vote_path(id: post.id), class: 'btn btn-warning btn-sm' %>
-  <%= link_to 'DownVote!', posts_downvote_path(id: post.id), class: 'btn btn-info btn-sm' %>
+  <%= link_to 'UpVote!', posts_vote_path(id: post.id), class: 'btn btn-success btn-sm' %>
+  <%= link_to 'DownVote!', posts_downvote_path(id: post.id), class: 'btn btn-danger btn-sm' %>
 </div>
 <% end %>
