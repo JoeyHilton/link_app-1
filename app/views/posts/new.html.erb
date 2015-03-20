@@ -1,13 +1,14 @@
 <h1> New Post </h1>
-<%= form_for @post do |f| %>
-  <%= f.label :title %>: 
+<%= bootstrap_form_for @post do |f| %>
+  
   <%= f.text_field :title %>
 
-  <%= f.label :url %> 
+  
   <%= f.text_field :url %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%#= f.label :vote %>
   <!-- <%#= f.text_field :vote %> -->
 
-  <%= f.submit %>
+  <%= f.submit "Create Post", class: "btn btn-primary" %>
 <% end %>

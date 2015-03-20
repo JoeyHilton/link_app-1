@@ -4,6 +4,10 @@ ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+
+gem 'devise'
+gem 'bootstrap_form'
+gem "font-awesome-rails"
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

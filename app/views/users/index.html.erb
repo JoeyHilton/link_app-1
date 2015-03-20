@@ -1,0 +1,10 @@
+<h1>All You Users!</h1>
+<% @users.each do |user| %>
+<div class='well'>
+  <h2><%= user.name %></h2>
+  <h3><%= user.email %></h3>
+  <p><%= user.bio %></p>
+  <%= button_to 'Show', user_path(user.id), class: "btn btn-primary", method: :get %>
+</div>
+  <br />
+<% end %>

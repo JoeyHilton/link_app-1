@@ -1,0 +1,13 @@
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>'s Profile
+</h1>
+<h3><%= @user.email %></h3>
+<p>
+  <%= @user.bio %>
+</p>
+
+<h3><%= @user.name %>'s Links</h3>
+<% @user.posts.each do |post| %>
+  <p><%= link_to post.title, post_path(post) %></p>
+<% end %>

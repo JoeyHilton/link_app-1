@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
   
+  # get 'users/index'
+
+  # get 'users/show'
+
+  # get 'users/profile'
   root 'posts#index'  
 
-  # get  'posts/show'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
-  # get  'posts/new'
-
-  # get  'posts/create'
-
-  # get  'posts/edit'
-
-  # get  'posts/update'
-
-  # get  'posts/destroy'
+  resources :users, :only => [:show, :index]
   get 'posts/vote'
+  get 'posts/downvote'
+  get '/profile', to: 'users#profile', as: :profile
   resources :posts
   
 

@@ -1,0 +1,13 @@
+<h1>All About You: Stuff You Should Already Know</h1>
+<h2><%= @user.name %></h2>
+<h3><%= @user.email %></h3>
+<p>
+  <%= @user.bio %>
+</p>
+
+<%= button_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary", method: :get%>
+
+<h3>My Links</h3>
+<% @user.posts.each do |post| %>
+  <p><%= link_to post.title, post_path(post) %></p>
+<% end %>
