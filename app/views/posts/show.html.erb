@@ -1,3 +1,4 @@
+<div class="panel panel-default">
 <h1> Link </h1>
 <h2><span class="btn btn-warning"><%= "Votes: #{@post.vote}"%></span> Website: <%= @post.title %>&nbsp|&nbsp<span class=boldfont><%= @post.url %></span></h2>
 <%= link_to 'Back', posts_path, class: "btn btn-primary" %>
@@ -5,4 +6,5 @@
   <%= link_to "Edit", edit_post_path(@post), class: "btn btn-info"  %>
   <%= link_to "Delete", @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"   %>
 <% end %>
+</div>
 

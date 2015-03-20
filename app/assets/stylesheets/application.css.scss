@@ -39,6 +39,8 @@
 
 body {
     background-image: url("/assets/sky.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
 .change{
