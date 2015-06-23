@@ -52,6 +52,7 @@
 
 body {
     background: image-url('c_board.png');
+    // background-image:url('<%= asset_path("c_board.png") %> ');
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding-top: 70px;
