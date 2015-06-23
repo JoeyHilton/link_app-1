@@ -20,12 +20,12 @@
 @import "font-awesome";
 
 .headline {
-    color: black;
-    text-shadow:
-    -1px -1px 0 #FFF,
-    1px -1px 0 #FFF,
-    -1px 1px 0 #FFF,
-    1px 1px 0 #FFF; 
+  color: black;
+  text-shadow:
+  -1px -1px 0 #FFF,
+  1px -1px 0 #FFF,
+  -1px 1px 0 #FFF,
+  1px 1px 0 #FFF; 
 }
 
 .boldfont {
@@ -52,7 +52,6 @@
 
 body {
     background: image-url('c_board.png');
-    // background-image:url('<%= asset_path("c_board.png") %> ');
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding-top: 70px;
@@ -64,7 +63,7 @@ body {
   margin: 0 auto;
   }
 
-.change{
+.change {
   width: 5px;
 }
 
