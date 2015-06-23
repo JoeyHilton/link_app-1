@@ -34,7 +34,11 @@
 
 .panel-default {
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.well {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .gravatar {
@@ -47,9 +51,16 @@
 }
 
 body {
-    background-image: url("/assets/orange.jpg");
+    background: image-url('c_board.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-top: 70px;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  img {
+  @extend .img-responsive;
+  margin: 0 auto;
   }
 
 .change{

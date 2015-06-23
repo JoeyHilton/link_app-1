@@ -5,7 +5,7 @@
   <%= f.text_field :title %>
 
   
-  <%= f.url_field :url %>
+  <%= f.url_field :url, placeholder: "http://www.example.com", :value => "http://" %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%#= f.label :vote %>

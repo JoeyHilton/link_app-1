@@ -1,4 +1,4 @@
-<h1 class="headline"> 'Yo Link Faves!'  <%= link_to 'Post a New Link', new_post_path, class: 'btn btn-default btn-lg' %></h1>
+<!-- <h1 class="headline"> 'Yo Link Faves!'  <%= link_to 'Post a New Link', new_post_path, class: 'btn btn-default btn-lg' %></h1> -->
 <% @posts.each do |post| %>
 <div class="panel panel-default">
   <h2><span class="btn btn-warning"><%= "Votes: #{post.vote}"%></span> Website: <%= post.title %>&nbsp|&nbsp<span class=boldfont><%= link_to post.url, post.url %></span></h2>
